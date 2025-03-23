@@ -1,0 +1,411 @@
+[{
+    "question" : "What is Aurora Borealis commonly known as?",
+    "answers" : [
+        "Fairy Dust",
+        "Northern Lights",
+        "Book of ages",
+        "A Game of Thrones main character"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "In which European country would you find the Rijksmuseum?",
+    "answers" : [
+        "Germany",
+        "Netherlands",
+        "Lithuania",
+        "Austria"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "In which part of your body would you find the cruciate ligament?",
+    "answers" : [
+        "Elbow",
+        "Eye",
+        "Knee",
+        "Thigh"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "What is the name of the main antagonist in the Shakespeare play Othello?",
+    "answers" : [
+        "Iago",
+        "Romeo",
+        "Desdemona",
+        "Cassio"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "What element is denoted by the chemical symbol Sn in the periodic table?",
+    "answers" : [
+        "Tin",
+        "Iron",
+        "Silicon",
+        "Titanium"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "What is the smallest planet in our solar system? ",
+    "answers" : [
+        "Uranus",
+        "Venus",
+        "Pluto",
+        "Mercury"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "What was the old name for a Snickers bar before it changed in 1990? ",
+    "answers" : [
+        "Marathon",
+        "Star Bar",
+        "Raider",
+        "Galak"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "From which US city do the band The Killers originate?",
+    "answers" : [
+        "Seattle",
+        "Las Vegas",
+        "Chicago",
+        "Salt Lake City"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "Which legendary surrealist artist is famous for painting melting clocks? ",
+    "answers" : [
+        "Pablo Picasso",
+        "Frida Kahlo",
+        "Salvador Dali",
+        "Joan Miro"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "Which European city hosted the 1936 Summer Olympics? ",
+    "answers" : [
+        "Barcelona",
+        "Munich",
+        "Berlin",
+        "Paris"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "In which continent are Chile, Argentina and Brazil?  ",
+    "answers" : [
+        "North America",
+        "South America",
+        "Europe",
+        "Australasia"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "Which brand of soup featured in one of Andy Warhol's most famous pop art pieces?  ",
+    "answers" : [
+        "Heinz",
+        "Knorr",
+        "Baxters",
+        "Campbell's"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "The Mad Hatter and the Cheshire Cat are characters in which famous book?  ",
+    "answers" : [
+        "Winne-the-Pooh",
+        "Charlotte's Web",
+        "Charlie and the Chocolate Factory",
+        "Alice in Wonderland"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "What measurement scale is used to determine wind speed?  ",
+    "answers" : [
+        "Beaufort scale",
+        "Richter scale",
+        "Synoptic scale",
+        "Gusting scale"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "In which city were the 1992 Summer Olympics held?  ",
+    "answers" : [
+        "Atlanta",
+        "Barcelona",
+        "Sydney",
+        "Seoul"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "The Statue of Liberty was a gift to the United States from which European country? ",
+    "answers" : [
+        "Belgium",
+        "Germany",
+        "Spain",
+        "France"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "Which traditional Spanish dance originated in Andalusia and is recognised by UNESCO as a heritage of humanity?  ",
+    "answers" : [
+        "Sardana",
+        "Tango",
+        "Flamenco",
+        "Paso Doble"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "How many sides does a dodecahedron have?  ",
+    "answers" : [
+        "12",
+        "24",
+        "14",
+        "20"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "Which animated Disney movie features characters including Rafiki and Zazu?  ",
+    "answers" : [
+        "The Jungle Book",
+        "The Lion King",
+        "Finding Nemo",
+        "Snow White and the Seven Dwarfs"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "What is the world's fastest species of bird?  ",
+    "answers" : [
+        "Peregrine falcon",
+        "Penguin",
+        "Frigatebird",
+        "Golden eagle"    
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "The human body is made up of approximately how much water? ",
+    "answers" : [
+        "40%",
+        "50%",
+        "60%",
+        "70%"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "What year was Michael Collins killed? ",
+    "answers" : [
+        "1921",
+        "1922",
+        "1924",
+        "1925"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "The Irish tricolour is the flag of which African country when turned backwards? ",
+    "answers" : [
+        "Ivory Coast",
+        "Ghana",
+        "Egypt",
+        "Sudan"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "Which female holds the most Wimbledon titles? ",
+    "answers" : [
+        "Martina Navratilova",
+        "Serena Williams",
+        "Venus Williams",
+        "Martina Hingis"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "Which Pixar movie featured a journey to South America in a house held up by floating balloons? ",
+    "answers" : [
+        "Dream",
+        "Up",
+        "Fly",
+        "Wish"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "Name the blue amnesiac fish voiced by Ellen DeGeneres in Finding Nemo. ",
+    "answers" : [
+        "Peach",
+        "Squirt",
+        "Bubbles",
+        "Dory"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "Who directed the 2006 dark fantasy film Pan's Labyrinth? ",
+    "answers" : [
+        "Tim Burton",
+        "Guillermo del Toro",
+        "Wes Anderson",
+        "Steven Spielberg"
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "Who directed Requiem For a Dream? ",
+    "answers" : [
+        "Darren Aronofsky",
+        "Edgar Wright",
+        "Michael Bay",
+        "Spike Lee"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : " In what year was the the very first Shrek movie released? ",
+    "answers" : [
+        "2000",
+        "2001",
+        "2002",
+        "2003"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "Who is the rightful captain of the Black Pearl in the Disney classic Pirates of the Caribbean? ",
+    "answers" : [
+        "Blackbeard",
+        "Francis Drake",
+        "Silver Tongue",
+        "Jack Sparrow"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "What is the name of the actor who plays Harry Potter in the movies? ",
+    "answers" : [
+        "Rupert Grint",
+        "Tom Felton",
+        "Tom Holland",
+        "Daniel Radcliffe"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "In the solar system, which planet is known for its rings? ",
+    "answers" : [
+        "Jupiter",
+        "Saturn",
+        "Mars",
+        "Venus"  
+    ],
+    "correct" : 1
+  },
+  {
+    "question" : "Who replaced Richard Harris as Dumbledore in Harry Potter: The Prisoner of Azkaban? ",
+    "answers" : [
+        "Jeremy Irons",
+        "Jim Broadbent",
+        "Ian McKellen",
+        "Michael Gambon"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : "Where were the Olympic Games held in 2016? ",
+    "answers" : [
+        "London",
+        "Rio de Janeiro",
+        "Tel Aviv",
+        "Montreal"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "At a length of 4,132 miles, what is the longest river in the world? ",
+    "answers" : [
+        "Amazon",
+        "Thames",
+        "Nile",
+        "Mekong"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "What is the name of the spacecraft that took the first men to the moon? ",
+    "answers" : [
+        "Apollo 6",
+        "Apollo 9",
+        "Apollo 11",
+        "Apollo 13"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : " In the human body, where would you find atriums, aortas and ventricles? ",
+    "answers" : [
+        "Heart",
+        "Lungs",
+        "Brain",
+        "Stomach"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "What colour is found on 75% of the world's flags? ",
+    "answers" : [
+        "Red",
+        "Green",
+        "Blue",
+        "White"
+    ],
+    "correct" : 0
+  },
+  {
+    "question" : "What is the largest ocean in the world?",
+    "answers" : [
+        "Atlantic Ocean",
+        "Indian Ocean",
+        "Pacific Ocean",
+        "Arctic Ocean"
+    ],
+    "correct" : 2
+  },
+  {
+    "question" : "Tacos and guacamole are popular foods from which country? ",
+    "answers" : [
+        "Argentina",
+        "Brazil",
+        "Chile",
+        "Mexico"
+    ],
+    "correct" : 3
+  },
+  {
+    "question" : " Which of these Disney movies came first? ",
+    "answers" : [
+        "Bambi",
+        "Lion King",
+        "Snow White and the Seven Dwarfs",
+        "Peter Pan"
+    ],
+    "correct" : 2
+  }
+  ]
