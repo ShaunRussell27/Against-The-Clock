@@ -1,63 +1,117 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: aqua;
-    
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Light blue background for better readability */
+  color: #333; /* Darker text for better contrast */
+}
 
-  header{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #ba3737;
-    border-bottom: 1px solid #ccc;
-  }
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #0a0a0a;
+  color: white;
+  border-bottom: 2px solid #ccc;
+}
 
-  .header-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* Add spacing between "Money" and the button */
-    margin-top: 10px; /* Add spacing below the header text */
-    }
+.header-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Add spacing between buttons */
+  margin-top: 10px;
+}
 
-    #money {
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 20px;
-        font-size:20px;
-        font-weight: bold;
-    }
-    
-    #start-game {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    #start-game:hover {
-        background-color: #45a049; /* Add hover effect for the button */
-    }
+#money {
+  font-size: 24px; /* Increased font size for better visibility */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  color: #2c3e50; /* Darker blue for better contrast */
+  font-family: 'Arial', sans-serif; /* Consistent font style */
+}
 
+#winner {
+  font-size: 24px; /* Increased font size for emphasis */
+  font-weight: bold;
+  text-align: center;
+  margin-top: 20px;
+  color: #27ae60; /* Green color to indicate success or result */
+  font-family: 'Arial', sans-serif; /* Consistent font style */
+}
+
+/* Button Styles */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-game, #pause-game {
+  background-color: #4CAF50;
+  color: white;
+}
+
+#start-game:hover, #pause-game:hover {
+  background-color: #45a049;
+}
+
+/* Content Layout */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  gap: 40px;
+  flex-wrap: wrap; /* Make it responsive */
+}
+
+.player {
+  border: 2px solid #000;
+  padding: 20px;
+  width: 250px; /* Increased width for better visibility */
+  text-align: center;
+  background-color: #fff; /* White background for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .content {
-    display: flex;
-    justify-content: center;
-    align-items: start;
-    padding: 40px;
-    gap: 40px;
+      flex-direction: column; /* Stack players vertically on smaller screens */
+      align-items: center;
   }
 
   .player {
-    border: 2px solid #000;
-    padding: 30px;
-    width: 200px;
-    text-align: center;
+      width: 90%; /* Full width for smaller screens */
   }
+}
+
+@media (max-width: 480px) {
+  header {
+      padding: 15px;
+  }
+
+  button {
+      font-size: 14px;
+      padding: 8px 16px;
+  }
+
+  #money {
+      font-size: 18px;
+  }
+}

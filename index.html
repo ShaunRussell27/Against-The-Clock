@@ -10,28 +10,29 @@
     <header>
         <h1>Against the Clock Quiz</h1>
         <div class="header-controls">
-            <button id="start-game" onclick="startGame()">Start Game</button>
+            <button id="start-game" onclick="startGame()">Start Game/Restart Game</button>
+            <button id="pause-game" onclick="pauseGame()">Pause Game</button>
         </div>
     </header>
 
     <main id="game">
         <div id="money">Money: €0</div>
+        <div id="winner">Guess the questions:</div>
         <div class="content">
             <section id="player1" class="player">
                 <h2>Player 1</h2>
                 <div id="timer1">Time: 60s</div>
                 <div id="player1-questions"></div>
-                <button onclick="startPlayerTurn(1)">Start Player 1's Turn</button>
             </section>
 
             <section id="player2" class="player">
                 <h2>Player 2</h2>
                 <div id="timer2">Time: 60s</div>
                 <div id="player2-questions"></div>
-                <button onclick="startPlayerTurn(2)">Start Player 2's Turn</button>
             </section>
         </div>
     </main>
+    
 
     <footer>
         <div id="result"></div>

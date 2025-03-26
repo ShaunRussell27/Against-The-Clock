@@ -5,135 +5,134 @@ let player2Time = 60;
 let currentPlayer = 1;
 let player1CorrectAnswers = 0;
 let player2CorrectAnswers = 0;
-let questions = []; // Will be loaded from questions.json
-let usedQuestions = []; // To track the used questions
+let questions = [];
+let usedQuestions = [];
 let gameOver = false;
+let timer; // GLOBAL TIMER
+let isPaused = false;
+let currentQuestion = null; // Store the current question for pausing
 
-// Load questions (from questions.json)
+// Load questions from questions.json
 fetch('questions.json')
     .then(response => response.json())
     .then(data => {
-        questions = data.questions;
-        startGame();  // Initialize game once questions are loaded
+        questions = data;
+        startGame();
     });
 
 function startGame() {
-    // Select random money value
     moneyValue = money[Math.floor(Math.random() * money.length)];
-    document.getElementById("money-display").innerText = `Money: €${moneyValue}`;
-
-    // Reset timers and correct answer counters
+    document.getElementById("money").innerText = `Money: €${moneyValue}`;
+    
     player1Time = 60;
     player2Time = 60;
     player1CorrectAnswers = 0;
     player2CorrectAnswers = 0;
     usedQuestions = [];
     gameOver = false;
+
     updateTimerDisplay();
     updateCorrectAnswers();
 
-    // Start Player 1's turn
     startPlayerTurn(1);
 }
 
 function startPlayerTurn(player) {
-    if (gameOver) return; // Prevent starting new turn if the game is over
-
-    if (player === 1) {
-        currentPlayer = 1;
-        playTurn(player1Time);
-    } else {
-        currentPlayer = 2;
-        playTurn(player2Time);
-    }
+    if (gameOver) return;
+    currentPlayer = player;
+    playTurn();
 }
 
-function playTurn(playerTime) {
-    let question = getRandomQuestion();
-    if (!question) {
-        // If there are no questions left, end the game
+function playTurn() {
+    if (!currentQuestion) {
+        currentQuestion = getRandomQuestion();
+    }
+
+    if (!currentQuestion) {
         endGame();
         return;
     }
 
-    displayQuestion(question);
+    displayQuestion(currentQuestion); // Fixed typo: currentQuestion
 
-    let timer = setInterval(() => {
-        if (playerTime <= 0) {
-            clearInterval(timer);
-            endTurn();
+    clearInterval(timer); // Clear existing timer if any
+
+    timer = setInterval(() => {
+        if (currentPlayer === 1) {
+            player1Time--;
+            if (player1Time <= 0) {
+                clearInterval(timer);
+                endTurn();
+            }
         } else {
-            playerTime--;
-            updateTimerDisplay();
+            player2Time--;
+            if (player2Time <= 0) {
+                clearInterval(timer);
+                endTurn();
+            }
         }
+        updateTimerDisplay();
     }, 1000);
 }
 
 function getRandomQuestion() {
-    // Ensure unique questions by selecting a random question from remaining ones
-    let remainingQuestions = questions.filter(q => !usedQuestions.includes(q));
-    if (remainingQuestions.length === 0) return null; // No questions left
+    let remaining = questions.filter(q => !usedQuestions.includes(q));
+    if (remaining.length === 0) return null;
 
-    let randomIndex = Math.floor(Math.random() * remainingQuestions.length);
-    let selectedQuestion = remainingQuestions[randomIndex];
+    let index = Math.floor(Math.random() * remaining.length);
+    let question = remaining[index];
 
-    usedQuestions.push(selectedQuestion); // Mark the question as used
-    return selectedQuestion;
+    usedQuestions.push(question);
+    return question;
 }
 
 function displayQuestion(question) {
-    const questionElement = document.createElement('div');
-    questionElement.innerHTML = `
+    const questionHTML = `
         <p>${question.question}</p>
-        ${question.answers.map((answer, index) => `
-            <button onclick="answerQuestion(${index}, ${question.correctAnswerIndex})">${answer}</button>
-        `).join('')}
+        ${question.answers.map((ans, i) => 
+            `<button onclick="answerQuestion(${i}, ${question.correct})">${ans}</button>`
+        ).join('')}
     `;
-    document.getElementById(`player${currentPlayer}-questions`).innerHTML = questionElement.innerHTML;
-}
-
-function answerQuestion(selectedIndex, correctIndex) {
-    if (selectedIndex === correctIndex) {
-        if (currentPlayer === 1) {
-            player1CorrectAnswers++;
-        } else {
-            player2CorrectAnswers++;
-        }
-        updateCorrectAnswers();
-    }
-
-    endTurn();
+    document.getElementById(`player${currentPlayer}-questions`).innerHTML = questionHTML;
 }
 
 function endTurn() {
     if (currentPlayer === 1) {
         if (player1CorrectAnswers >= 5 || player1Time <= 0) {
-            endGame();
+            startPlayerTurn(2);
         } else {
+            currentPlayer = 2; // Switch to Player 2
             startPlayerTurn(2);
         }
     } else {
         if (player2CorrectAnswers >= 5 || player2Time <= 0) {
             endGame();
         } else {
+            currentPlayer = 1; // Switch to Player 1
             startPlayerTurn(1);
         }
     }
 }
 
 function endGame() {
+    clearInterval(timer);
     gameOver = true;
-    let winnerMessage = '';
 
+    let result = '';
     if (player1CorrectAnswers >= 5 && player2CorrectAnswers < 5) {
-        winnerMessage = `Player 1 wins €${player1Time * moneyValue}!`;
+        result = `Player 1 wins €${player1Time * moneyValue}!`;
     } else if (player2CorrectAnswers >= 5 && player1CorrectAnswers < 5) {
-        winnerMessage = `Player 2 wins €${player2Time * moneyValue}!`;
+        result = `Player 2 wins €${player2Time * moneyValue}!`;
     } else {
-        winnerMessage = 'No winner: Neither player answered 5 questions correctly.';
+        result = 'No winner: Neither player answered 5 questions correctly.';
     }
 
-    document.getElementById("result").innerText = winnerMessage;
+     // Display the result in the #winner div
+     document.getElementById("winner").innerText = result;
+
+     // Optionally, clear the question areas
+     document.getElementById("player1-questions").innerHTML = '';
+     document.getElementById("player2-questions").innerHTML = '';
 }
 
 function updateTimerDisplay() {
@@ -142,15 +141,70 @@ function updateTimerDisplay() {
 }
 
 function updateCorrectAnswers() {
-    document.getElementById('player1').innerHTML = `
-        <h2>Player 1</h2>
-        <div id="timer1">Time: ${player1Time}s</div>
-        <div>Correct Answers: ${player1CorrectAnswers} / 5</div>
-    `;
-    document.getElementById('player2').innerHTML = `
-        <h2>Player 2</h2>
-        <div id="timer2">Time: ${player2Time}s</div>
-        <div>Correct Answers: ${player2CorrectAnswers} / 5</div>
-    `;
+    document.getElementById('player1').querySelector('div:nth-child(3)').innerText =
+        `Correct Answers: ${player1CorrectAnswers} / 5`;
+    document.getElementById('player2').querySelector('div:nth-child(3)').innerText =
+        `Correct Answers: ${player2CorrectAnswers} / 5`;
 }
 
+function pauseGame() {
+    if (!gameOver) {
+        if (!isPaused) {
+            clearInterval(timer); // Stop the timer
+            isPaused = true;
+            document.getElementById('pause-game').innerText = 'Resume Game'; // Update button text
+        } else {
+            isPaused = false;
+            document.getElementById('pause-game').innerText = 'Pause Game'; // Update button text
+
+            // Resume the timer without fetching a new question
+            timer = setInterval(() => {
+                if (currentPlayer === 1) {
+                    player1Time--;
+                    if (player1Time <= 0) {
+                        clearInterval(timer);
+                        endTurn();
+                    }
+                } else {
+                    player2Time--;
+                    if (player2Time <= 0) {
+                        clearInterval(timer);
+                        endTurn();
+                    }
+                }
+                updateTimerDisplay();
+            }, 1000);
+        }
+    }
+}
+
+function answerQuestion(selected, correct) {
+    clearInterval(timer); // Stop the timer when the player answers
+
+    let feedback = ''; // Variable to store feedback message
+
+    if (selected === correct) {
+        feedback = 'Correct!';
+        if (currentPlayer === 1) player1CorrectAnswers++;
+        else player2CorrectAnswers++;
+        updateCorrectAnswers(); // Update the correct answers display
+    } else {
+        feedback = `Wrong! The correct answer was: ${correct}`;
+    }
+
+    // Display feedback message
+    document.getElementById(`player${currentPlayer}-questions`).innerHTML = `
+        <p>${feedback}</p>
+        <p>Correct Answers: ${
+            currentPlayer === 1 ? player1CorrectAnswers : player2CorrectAnswers
+        } / 5</p>
+    `;
+
+    // Clear the current question
+    currentQuestion = null;
+
+    // Wait for 2 seconds before ending the turn
+    setTimeout(() => {
+        endTurn();
+    }, 2000);
+}
