@@ -10,21 +10,50 @@
     <header>
         <h1>Against the Clock Quiz</h1>
         <div class="header-controls">
+            <!-- Header buttons-->
             <button id="start-game" onclick="startGame()">Start Game/Restart Game</button>
             <button id="pause-game" onclick="pauseGame()">Pause Game</button>
+            
+            <!-- Dropdown Menu for Settings -->
+            <div class="dropdown">
+                <button class="dropbtn">Settings</button>
+                <div class="dropdown-content">
+                    <label for="time-select">Select Time:</label>
+                    <select id="time-select">
+                        <option value="60">default (60s)</option>
+                        <option value="30">30s</option>
+                        <option value="90">90s</option>
+                        <option value="120">120s</option>
+                    </select>
+                    
+                    <label for="questions-select">Select Questions:</label>
+                    <select id="questions-select">
+                        <option value="5">Default (5 Questions)</option>
+                        <option value="3">3 Questions</option>
+                        <option value="10">10 Questions</option>
+                        <option value="15">15 Questions</option>
+                    </select>
+                    <!--Save the setting button-->
+                    <button onclick="saveSettings()">Save Settings</button>
+                </div>
+            </div>
         </div>
     </header>
-
+    
+    
+    <!-- main game display-->
     <main id="game">
         <div id="money">Money: €0</div>
         <div id="winner">Guess the questions:</div>
         <div class="content">
+            <!--first player-->
             <section id="player1" class="player">
                 <h2>Player 1</h2>
                 <div id="timer1">Time: 60s</div>
                 <div id="player1-questions"></div>
             </section>
 
+            <!--second player-->
             <section id="player2" class="player">
                 <h2>Player 2</h2>
                 <div id="timer2">Time: 60s</div>
@@ -33,10 +62,6 @@
         </div>
     </main>
     
-
-    <footer>
-        <div id="result"></div>
-    </footer>
 
     <script src="main.js"></script>
 </body>

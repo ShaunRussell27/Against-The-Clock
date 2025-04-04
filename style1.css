@@ -24,6 +24,7 @@ header {
   align-items: center;
   gap: 20px; /* Add spacing between buttons */
   margin-top: 10px;
+  position: relative;
 }
 
 #money {
@@ -87,6 +88,100 @@ button {
 .player:hover {
   transform: translateY(-5px); /* Slight lift on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+ /* Header layout with flexbox */
+ header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.header-controls {
+  position: relative; /* Ensure the dropdown menu is positioned relative to the controls */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Settings button styling */
+#settings-button {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  min-width: 200px;
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content select,
+.dropdown-content button {
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  background-color: #444;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content select {
+  background-color: #555;
+}
+
+.dropdown-content button {
+  background-color: #54d816;
+}
+
+.dropdown-content select:focus,
+.dropdown-content button:focus {
+  outline: none;
+  background-color: #777;
+}
+/* Additional hover effect for buttons */
+.dropdown-content button:hover {
+  background-color: #4cae1a; /* Darker green on hover */
+}
+
+/* Additional hover effect for the select element */
+.dropdown-content select:hover {
+  background-color: #666; /* Darker background on hover */
+}
+
+label {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
 }
 
 /* Responsive Design */
